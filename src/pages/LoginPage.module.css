@@ -1,0 +1,172 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243e 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.orb1 {
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(108,99,255,0.35) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -150px; left: -150px;
+  animation: float 8s ease-in-out infinite;
+}
+.orb2 {
+  position: absolute;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,107,107,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -100px; right: -100px;
+  animation: float 10s ease-in-out infinite reverse;
+}
+.orb3 {
+  position: absolute;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(67,233,123,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  top: 50%; right: 20%;
+  animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+}
+
+.card {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 28px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  z-index: 10;
+  animation: scaleIn 0.4s ease forwards;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.logoIcon { font-size: 1.6rem; }
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.heroText {
+  margin-bottom: 2.5rem;
+}
+.heroText h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+.heroText h1 span {
+  background: linear-gradient(90deg, #6C63FF, #FF6B6B, #43E97B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.heroText p {
+  color: rgba(255,255,255,0.55);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.inputGroup label {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.inputGroup input {
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1.125rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 100%;
+}
+.inputGroup input::placeholder { color: rgba(255,255,255,0.3); }
+.inputGroup input:focus {
+  border-color: rgba(108,99,255,0.7);
+  background: rgba(108,99,255,0.1);
+  box-shadow: 0 0 0 3px rgba(108,99,255,0.15);
+}
+.inputError {
+  border-color: rgba(255,107,107,0.7) !important;
+}
+.error {
+  color: #FF6B6B;
+  font-size: 0.8rem;
+}
+
+.btn {
+  background: linear-gradient(135deg, #6C63FF 0%, #9B8FFF 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 24px rgba(108,99,255,0.4);
+  transition: var(--transition);
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(108,99,255,0.55);
+}
+.btn:active { transform: translateY(0); }
+
+.features {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.85rem;
+}
+.featureItem span:first-child { font-size: 1rem; }
+
+@media (max-width: 480px) {
+  .card { padding: 2rem 1.5rem; }
+}
